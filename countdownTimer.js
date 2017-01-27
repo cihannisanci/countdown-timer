@@ -1,4 +1,5 @@
 function countdownTimer(endTime) {
+
   var counter;
   var remainingTime;
   var seconds;
@@ -22,16 +23,17 @@ function countdownTimer(endTime) {
       minutes = parseInt((remainingTime / (1000 * 60)) % 60);
       hours = parseInt((remainingTime / (1000 * 60 * 60)) % 24);
       days = parseInt(((remainingTime) / (1000 * 60 * 60 * 24)) % 365);
+
+      if(remainingTime <= 0) {
+        clearInterval(counter);
+      }
    
       displayDay.innerHTML = days;
       displayHour.innerHTML = hours;
       displayMinutes.innerHTML = minutes;
-      displaySecond.innerHTML = seconds;
-      
-      if(remainingTime <= 0) {
-        clearInterval(counter);
-      }
+      displaySecond.innerHTML = seconds;  
     }
+    startTimer();
     counter = setInterval(startTimer,1000);
   }
   displayTimer();
@@ -42,9 +44,13 @@ function getDeadline() {
   var deadline = document.getElementsByClassName('date-input')[0].value;
 
   countdownTimer(deadline);
-  resetForm();                        
+  resetForm();                     
 }
 
 function resetForm() {  
   document.getElementsByClassName("my-form")[0].reset();
+}
+
+function resetTimer() {
+  window.location.reload();
 }

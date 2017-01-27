@@ -6,29 +6,34 @@
   </head>
   <body>
     <div>
-      <form class="inputDate">
-        <input type="date">
-        <input type="button" value="Submit">
+      <h1>Countdown Timer</h1>
+    </div>
+    <div>
+      <form class="my-form">
+        <p>Please enter a deadline date</p>
+        <input class="date-input" type="date" required="required">
+        <input type="button" value="Submit" onclick="getDeadline()">
+        <input type="button" value="Reset" onclick="resetTimer()">
       </form>
     </div>
-    <div >
+    <div class="timer">
       <div>
-        <div class="days"></div>
-        <div>Days</div>
+        <div class="days box">0</div>
+        <div class="name box">Days</div>
       </div>
       <div>
-        <div class="hours"></div>
-        <div>Hours</div>
+        <div class="hours box">0</div>
+        <div class="name box">Hours</div>
       </div>
       <div>
-        <div class="minutes"></div>
-        <div>Minutes</div>
+        <div class="minutes box">0</div>
+        <div class="name box">Minutes</div>
       </div>
       <div>
-        <div class="seconds"></div>
-        <div>Seconds</div>
+        <div class="seconds box">0</div>
+        <div class="name box">Seconds</div>
       </div>
     </div>
-    <script src="countdonwTimer.js"></script>
+    <script src="countdownTimer.js"></script>
   </body>
 </html>
